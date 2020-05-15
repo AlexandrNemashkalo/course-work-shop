@@ -1,0 +1,28 @@
+﻿@model bool
+
+</!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    <title>Form</title>
+</head>
+<body>
+    <div class="text-center">
+        @if (Model == false)
+        {
+            <h1>Ошибка </h1>
+            <h3>Истекло время или шо-то другое непонятное случилось</h3>
+        }
+        else
+        {
+            <h1>Вы подтвердили почту </h1>
+            <h3>Возвращайтесь обратно на сайт и кайфуйте </h3>
+        }
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+C:\Users\Админ\source\repos\Shop.Auth\bin\Debug\netcoreapp3.0\Shop.Auth.deps.json
+C:\Users\Админ\source\repos\Shop.Auth\bin\Debug\netcoreapp3.0\Shop.Auth.dll
+C:\Users\Админ\source\repos\Shop.Auth\bin\Debug\netcoreapp3.0\Shop.Domain.dll
+C:\Users\Админ\source\repos\Shop.Auth\bin\Debug\netcoreapp3.0\Shop.Domain.pdb
+C:\Users\Админ\source\repos\Shop.Auth\obj\Debug\netcoreapp3.0\Shop.Auth.csprojAssemblyReference.cache
+C:\Users\Админ\source\repos\Shop.Auth\obj\Debug\netcoreapp3.0\Shop.Auth.AssemblyInfoInputs.cache
+C:\Users\Админ\source\repos\Shop.Auth\obj\Debug\netcoreapp3.0\Shop.Auth.AssemblyInfo.cs
+C:\Users\Админ\source\repos\Shop.Auth\obj\Debug\netcoreapp3.0\Shop.Auth.csproj.CopyComplete
+C:\Users\Админ\source\repos\Shop.Auth\bin\Debug\netcoreapp3.0\Shop.Auth.pdb
+C:\Users\Админ\source\repos\Shop.Auth\obj\Debug\netcoreapp3.0\Shop.Auth.dll
+C:\Users\Админ\source\repos\Shop.Auth\obj\Debug\netcoreapp3.0\Shop.Auth.pdb
+C:\Users\Админ\source\repos\Shop.Auth\bin\Debug\netcoreapp3.0\Shop.Core.dll
+C:\Users\Админ\source\repos\Shop.Auth\bin\Debug\netcoreapp3.0\Shop.Core.pdb

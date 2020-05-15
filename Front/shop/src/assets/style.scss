@@ -1,0 +1,384 @@
+@import 'varibles';
+@import 'mixin';
+
+body{
+padding-bottom: 60px;
+}
+html{
+
+}
+
+#header{
+    background-color: rgb(255,202,5);
+    color: white;
+  
+    
+}
+#miem{
+    width:120px;
+
+
+}
+
+
+#headerBack{
+    box-shadow:0px 10px 15px   rgba(153, 152, 152, 0.4);
+    background-color: white;
+
+    position:absolute;
+    width:100%;
+    z-index:100;
+    //top:33px
+}
+#trash{
+    width:45px;
+    padding-right:10px;
+    
+}
+.trash{
+
+}
+.trash_into{
+    position:absolute;
+    padding-right:5px;
+    padding-left:5px;
+    background-color:  rgb(255,202,5);
+    border-radius:15px;
+    font-size:12px;
+    color:white;
+    right:18px;
+    top:0px;
+}
+.mymenu3{
+    background-color: white;
+    color:rgb(88,89,91);
+    border: 1px solid rgb(226, 227, 228);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgb(226, 227, 228) ;
+}
+
+
+.link:hover{
+    text-decoration:none;
+    color:gray;
+}
+.link{
+    color:white;
+}
+.textHeader{
+    font-size:13px
+}
+.curs{
+        font-family: 'Spicy Rice', cursive;
+        //font-size:25px;  
+    }
+body{
+    background-color: rgba(246,246,246,100%);
+    text-align: left;
+}
+.main{
+    z-index: 10;
+     background-color: rgba(246,246,246,100%);
+     height:1000px;
+     width: 100%;
+    position: absolute;
+     top: 80px;
+     padding-top: 20px;
+     
+}
+
+.imgMenu{
+width: 50px;
+    background-color: rgb(88,89,91);
+    border: none;
+
+  
+}
+
+.mybtnmenu{ 
+    color:rgb(88,89,91);
+    border:none;
+    position: relative;
+}
+.mybtnmenu:hover{
+    color:rgb(253,211,55);
+    border:none;
+}
+.mybtnmenu:hover > .imgMenu {
+    background-color :rgb(253,211,55);
+    color:rgb(253,211,55);
+}
+
+.mymenu{
+    background-color: white;
+    color:rgb(88,89,91);
+    border: 1px solid rgb(226, 227, 228);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgb(226, 227, 228) ;
+}
+.mymenu2{
+    background-color: white;
+    color:rgb(88,89,91);
+    border: 1px solid rgb(226, 227, 228);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgb(226, 227, 228) ;
+    height: auto;
+ 
+  
+}
+#sobitiya{
+    height:250px;
+}
+
+
+
+
+
+
+
+
+    .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 40px;
+    background-color: rgb(88,89,91);
+    border-radius: 30px;
+    padding: 5px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;   
+    line-height: 25px;
+    transition: width 0.4s linear;
+    }
+
+    .search_input{
+    padding-left:10px;
+    width: 70%;
+    caret-color:white;
+    transition: width 0.4s linear;
+    }
+
+
+    .search_icon{
+    height: 30px;
+    width: 30px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+
+footer{
+    position: fixed;
+    left: -1px; bottom: -2px; /* Левый нижний угол */
+    background: white; /* Цвет фона */
+    color: rgb(88,89,91); /* Цвет текста */
+    width: 101%; /* Ширина слоя */
+    height: 50px;
+    box-shadow:0px -10px 15px   rgba(153, 152, 152, 0.4);
+}
+#komplex{
+    height:411px;
+}
+.sort{
+    color: rgb(88,89,91);
+}
+.sort:hover{
+    color: rgb(253,211,55);
+}
+.btnDelete{
+    cursor: pointer;
+    
+}
+.btnDelete:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+
+    .carousel-home-resources {
+        .left-1 {
+          transform: translateX(-500px) translateZ(-400px) rotateY(-30deg) !important;
+        }
+        .right-1 {
+          transform: translateX(500px) translateZ(-400px) rotateY(30deg) !important;
+        }
+      }
+      #hooper{
+        height: 250px;
+    }  
+    #boxCar{
+        height:250px
+    }
+
+    .slide{
+        height:265px;
+        
+    }
+    #hooper2{
+        height:100% ;
+         width:100%
+    }
+  .kompImg{
+    width: 60%;
+  }
+    
+
+.Stars{
+    display: block;
+    position: relative;
+}
+.flag{
+    width:30px;
+    position:absolute;
+    top:-22px;left:108px;
+}
+
+.flagItem{
+    width:30px;
+    position:absolute;
+    top:-22px;
+    right:10px;
+   
+}
+.adminka{
+    font-size:16px;
+}
+
+.hooper-prev{
+    background-color:rgb(253,211,55);
+    margin-left: 5px;
+    border-radius: 50%;
+}
+.hooper-next{
+    background-color:rgb(253,211,55);
+    margin-right: 5px;
+    border-radius: 50%;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0;
+  }
+#botCar{
+    width:100%
+}
+@media screen and (max-width: 1200PX){
+    .slide{
+        height:230px
+    }
+    .kompImg{
+        width: 72%;
+      }
+      .flag{
+        width:30px;
+        position:absolute;
+        top:-22px;
+        left:90px;
+    }
+    .trash_into{
+      
+        right:10px;
+        
+    }
+    }
+  @media screen and (max-width: 990PX){
+    .adminka{
+        font-size:15px;
+    }
+    .flagItem{
+        width:30px;
+        position:absolute;
+        top:-22px;
+        right:2px;
+    
+    }
+    .flag{
+        width:30px;
+        position:absolute;
+        top:-6px;
+        left:auto;
+        right: 5px;
+    }
+   #hooper{
+       height: 400px;
+   }
+   .kompImg{
+    width: 80%;
+  }
+   #boxCar{
+    height:400px
+}
+.mymenu2{
+    height: 100%;
+}
+#sobitiya{
+    height:100%;
+}
+#komplex{
+    height:100%;
+}
+#hooper2{
+    
+     width:990px
+}
+}
+
+.Stars2{
+    display: block;
+}
+
+
+
+@media screen and (max-width: 800PX){
+    #hooper{height: 305px;}
+    #boxCar{height:305px}
+    #botCar{
+        width:750px
+    }
+ 
+  }
+ 
+
+  @media screen and (max-width: 600PX){
+    #hooper{height: 230px;}
+    #boxCar{height:230px}
+    .Stars{
+        position: absolute;
+        bottom: -75px;
+        left: -105px;
+        width: 310px;
+    }
+  }
+  @media screen and (max-width: 450PX){
+    #hooper{height: 175px;}
+    #boxCar{height:175px}
+    
+  }
+  @media screen and (max-width: 400PX){
+    #hooper{height: 140px;}
+    #boxCar{height:140px}
+  }
+  @media screen and (max-width:370PX){
+    .Stars2{
+        display: none;
+    }
+    .Stars{
+        display: none;
+    }
+   
+  }
+  
+

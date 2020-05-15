@@ -1,0 +1,125 @@
+.qty .count {
+    color: rgb(88,89,91);
+    display: inline-block;
+    vertical-align: top;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    padding: 0 2px
+    ;min-width: 35px;
+    text-align: center;
+    background-color: white;
+}
+.qty .plus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 30px;
+    height: 30px;
+    font: 30px/1 Arial,sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    }
+.qty .minus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 30px;
+    height: 30px;
+    font: 30px/1 Arial,sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    background-clip: padding-box;
+}
+
+.minus:hover{
+    background-color: #717fe0 !important;
+}
+.plus:hover{
+    background-color: #717fe0 !important;
+}
+/*Prevent text selection*/
+
+input{  
+    border: 0;
+    width: 2%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.dropdown-toggle::after{
+    color: white;
+}
+
+
+#chek.active.focus,
+#chek.active:focus,
+#chek.focus,
+#chek:active.focus,
+#chek:active:focus,
+#chek:focus,
+label.active.focus,
+label.active:focus,
+label.focus,
+label:active.focus,
+label:active:focus,
+label:focus,
+a.active.focus,
+a.active:focus,
+a.focus,
+a:active.focus,
+a:active:focus,
+a:focus,
+button.active.focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus,
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus,
+.hooper.active.focus,
+.hooper.active:focus,
+.hooper.focus,
+.hooper:active.focus,
+.hooper:active:focus,
+.hooper:focus,
+#input-with-list.active.focus,
+#input-with-list.active:focus,
+#input-with-list.focus,
+#input-with-list:active.focus,
+#input-with-list:active:focus,
+#input-with-list:focus,
+textarea.active.focus,
+textarea.active:focus,
+textarea.focus,
+textarea:active.focus,
+textarea:active:focus,
+textarea:focus {
+outline: 0!important;
+outline-color: transparent!important;
+outline-width: 0!important;
+outline-style: none!important;
+box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+}
+
+.form-control.active.focus,
+.form-control.active:focus,
+.form-control.focus,
+.form-control:active.focus,
+.form-control:active:focus,
+.form-control:focus {
+    border-radius: 1px solid rgb(255,202,5)  !important;
+}
+
+
+
+
