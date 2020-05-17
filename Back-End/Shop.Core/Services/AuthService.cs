@@ -87,7 +87,7 @@ namespace Shop.Core.Services
                 }
                 return data;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return new Response<Token>(520, "Unknown error");
             }

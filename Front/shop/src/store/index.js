@@ -19,6 +19,8 @@ const vuexLocalStorage = new VuexPersist({
   storage: window.localStorage, 
 })
 
+var port = 'http://84.201.133.212'
+
 export default new Vuex.Store({
   state: {
     openMenu:false,
@@ -71,7 +73,7 @@ export default new Vuex.Store({
         'reviewId':form.id,
         'type':form.type,
         'userId':this.state.user.sub}
-      await axios.put('http://localhost:5000/api/like',data,config).then(response =>{
+      await axios.put(port+'/api/like',data,config).then(response =>{
          console.log(response)
         this.dispatch("GetCommentsByItem"); 
           })
@@ -105,7 +107,7 @@ export default new Vuex.Store({
         'itemId':item.id,
         'star':item.top,
         'userId':this.state.user.sub}
-      await axios.post('http://localhost:5000/api/rating',data,config).then(response =>{
+      await axios.post(port +'/api/rating',data,config).then(response =>{
         this.dispatch("GetItems"); console.log(response)
         this.dispatch("GetItemById",item.id); 
         swal({
@@ -119,16 +121,16 @@ export default new Vuex.Store({
 
       ///Все что связано с событиями///////////////////////////////////////////////////////////////////////////////////
       async GetEvents(){
-        await axios.get('http://localhost:5000/api/event/').then(response => {
+        await axios.get(port+'/api/event/').then(response => {
         this.commit("setEvents",response.data.reverse())
         console.log(response.data)
-    }).catch(function (error) {console.log(error)});
+    }).catch(function (e) {console.log(e)});
 
       },
       async DeleteEvent(state,id){ 
         await this.dispatch("CheckRefresh") 
         var config ={headers:{ Authorization :"Bearer "+ this.state.AllAboutToken.accessToken}}
-        await axios.delete('http://localhost:5000/api/event/'+id,config);
+        await axios.delete(port +'/api/event/'+id,config);
         this.dispatch("GetEvents") 
   },
   
@@ -139,7 +141,7 @@ export default new Vuex.Store({
           'id':item.id,  
           "text":item.text,
           "date":item.date}
-        await axios.put('http://localhost:5000/api/event/',data,config).then(response => {
+        await axios.put(port +'/api/event/',data,config).then(response => {
           console.log(response)
           this.dispatch("GetEvents") 
         }).catch(function (error) {console.log(error)});
@@ -151,7 +153,7 @@ export default new Vuex.Store({
         var data = { 
           "text":item.text,
           "date":item.date}
-        await axios.post('http://localhost:5000/api/event/',data,config).then(response => {
+        await axios.post(port +'/api/event/',data,config).then(response => {
           console.log(response)
           this.dispatch("GetEvents") 
         }).catch(function (error) {console.log(error)});
@@ -159,7 +161,7 @@ export default new Vuex.Store({
 
       ///Все что связано с новостями///////////////////////////////////////////////////////////////////////////////////
       async GetNews(){
-        await axios.get('http://localhost:5000/api/news/').then(response => {
+        await axios.get(port +'/api/news/').then(response => {
         this.commit("setNews",response.data.reverse())
         console.log(response.data)
     }).catch(function (error) {console.log(error)});
@@ -167,7 +169,7 @@ export default new Vuex.Store({
       async DeleteNews(state,id){ 
         await this.dispatch("CheckRefresh") 
         var config ={headers:{ Authorization :"Bearer "+ this.state.AllAboutToken.accessToken}}
-        await axios.delete('http://localhost:5000/api/news/'+id,config);
+        await axios.delete(port +'/api/news/'+id,config);
         this.dispatch("GetNews") 
   },
   
@@ -179,7 +181,7 @@ export default new Vuex.Store({
           "img":item.img,
           "link":item.link,
           "text":item.text}
-        await axios.put('http://localhost:5000/api/news/',data,config).then(response => {
+        await axios.put(port +'/api/news/',data,config).then(response => {
           console.log(response)
           this.dispatch("GetNews") 
         }).catch(function (error) {console.log(error)});
@@ -192,7 +194,7 @@ export default new Vuex.Store({
           "img":item.img,
           "link":item.link,
           "text":item.text}
-        await axios.post('http://localhost:5000/api/news/',data,config).then(response => {
+        await axios.post(port+'/api/news/',data,config).then(response => {
           console.log(response)
           this.dispatch("GetNews") 
         }).catch(function (error) {console.log(error)});
@@ -202,7 +204,7 @@ export default new Vuex.Store({
       async DeleteComment(state,id){ 
         await this.dispatch("CheckRefresh")  
         var config ={headers:{ Authorization :"Bearer "+ this.state.AllAboutToken.accessToken}}
-        await axios.delete('http://localhost:5000/api/chat/'+id,config);
+        await axios.delete(port +'/api/chat/'+id,config);
         this.dispatch("GetCommentsByItem") 
       },
   
@@ -236,22 +238,22 @@ export default new Vuex.Store({
           'userId': this.state.user.sub,
           'itemId': this.state.item.id
       }
-      await axios.post('http://localhost:5000/api/chat/',data , config).then(response =>{
+      await axios.post(port +'/api/chat/',data , config).then(response =>{
         this.dispatch("GetCommentsByItem") 
         console.log(response)})
-          .catch(function(e){this.error = e; }); 
+          .catch(function(e){console.log(e); }); 
     
   }  
      },
      async GetCommentsByItem(){
-      await axios.get('http://localhost:5000/api/chat/item/'+this.state.item.id).then(response => {
+      await axios.get(port +'/api/chat/item/'+this.state.item.id).then(response => {
       this.commit("setComments",response.data.reverse())
       console.log(response.data)
   }).catch(function (error) {console.log(error)});
     },
 
     async GetComments(){
-      await axios.get('http://localhost:5000/api/chat/').then(response => {
+      await axios.get(port +'/api/chat/').then(response => {
       this.commit("setAllComments",response.data.reverse())
       console.log(response.data)
   }).catch(function (error) {console.log(error)});
@@ -259,7 +261,7 @@ export default new Vuex.Store({
 
     Connection({dispatch}){
       console.log(HubConnectionBuilder)
-     let hubUrl = 'http://localhost:5000/authchat'; //ссылка, по которому будем обращаться к хабу
+     let hubUrl = port +'/authchat'; //ссылка, по которому будем обращаться к хабу
       let connection = new HubConnectionBuilder() //создаем соединение с хабом и передаем токен
           .withUrl(hubUrl, { accessTokenFactory: () => this.state.AllAboutToken.accessToken })
           .build();
@@ -285,7 +287,7 @@ export default new Vuex.Store({
           'id':or.id,
           'status' : or.status,
           'userId': or.userId,}
-      await axios.put('http://localhost:5000/api/order',data,config).then(response => {
+      await axios.put(port +'/api/order',data,config).then(response => {
         console.log(response)
       }).catch(function (error) {console.log(error)});
       this.dispatch("GetOrders")     
@@ -294,7 +296,7 @@ export default new Vuex.Store({
     async DeleteOrder(state,id){ 
       await this.dispatch("CheckRefresh")  
       var config ={headers:{ Authorization :"Bearer "+ this.state.AllAboutToken.accessToken}}
-      await axios.delete('http://localhost:5000/api/order/'+id,config);
+      await axios.delete(port +'/api/order/'+id,config);
       this.dispatch("GetOrders") 
     },
 
@@ -325,7 +327,7 @@ export default new Vuex.Store({
         'show':true,
         'status':"в процесе",
         'userId':this.state.user.sub}
-      await axios.post('http://localhost:5000/api/order',data,config).then(response =>{
+      await axios.post(port +'/api/order',data,config).then(response =>{
           this.state.myItems.forEach(e => {
             if(e.status ==true){
               e.orderId = response.data.id
@@ -340,7 +342,7 @@ export default new Vuex.Store({
     async GetOrders(){
       await this.dispatch("CheckRefresh")
       var config ={headers:{ Authorization :"Bearer "+ this.state.AllAboutToken.accessToken}}
-      await axios.get('http://localhost:5000/api/order/user/'+this.state.user.sub,config).then(response =>{
+      await axios.get(port +'/api/order/user/'+this.state.user.sub,config).then(response =>{
       this.commit("setOrders",Sort(response.data))
     }).catch(function (error) {console.log(error)});
     },
@@ -350,7 +352,7 @@ export default new Vuex.Store({
       let orders
       await this.dispatch("CheckRefresh")
       var config ={headers:{ Authorization :"Bearer "+ this.state.AllAboutToken.accessToken}}
-      await axios.get('http://localhost:5000/api/order/',config).then(response =>{
+      await axios.get(port +'/api/order/',config).then(response =>{
          orders = Sort(response.data)
          console.log(response.data)
     }).catch(function (error) {console.log(error)});
@@ -363,7 +365,7 @@ export default new Vuex.Store({
     async GetMyItems(){
       await this.dispatch("CheckRefresh")
       var config ={headers:{ Authorization :"Bearer "+ this.state.AllAboutToken.accessToken}}
-          await axios.get('http://localhost:5000/api/useritem/useritems/'+this.state.user.sub ,config).then(response =>{
+          await axios.get(port +'/api/useritem/useritems/'+this.state.user.sub ,config).then(response =>{
             console.log(response.data)
           this.commit("setMyItems",Sort(response.data))
         }).catch(function (error) {console.log(error)});
@@ -377,7 +379,7 @@ export default new Vuex.Store({
             'userId':this.state.user.sub,
             'itemId': id,
             'value':+1}
-        await axios.post('http://localhost:5000/api/useritem/',data,config).then(response =>{
+        await axios.post(port +'/api/useritem/',data,config).then(response =>{
           console.log(response)
           this.dispatch("GetMyItems") })
           .catch(function (error) {console.log(error)});      
@@ -386,7 +388,7 @@ export default new Vuex.Store({
   async DeleteMyItem(state,id){ 
         await this.dispatch("CheckRefresh") 
         var config ={headers:{ Authorization :"Bearer "+ this.state.AllAboutToken.accessToken}}
-        await axios.delete('http://localhost:5000/api/useritem/'+id,config);
+        await axios.delete(port +'/api/useritem/'+id,config);
         this.dispatch("GetMyItems") 
   },
 
@@ -401,7 +403,7 @@ export default new Vuex.Store({
         "value": myItem.value,
         'orderId': myItem.orderId
       }
-    await axios.put('http://localhost:5000/api/useritem',data,config).then(response => {
+    await axios.put(port+'/api/useritem',data,config).then(response => {
       console.log(response)
     }).catch(function (error) {console.log(error)});
     this.dispatch("GetMyItems")     
@@ -410,14 +412,14 @@ export default new Vuex.Store({
    
     //Все что связано с категориями////////////////////////////////////////////////////////////////////////////////////////////////////
     async GetCategories(){
-      await axios.get('http://localhost:5000/api/category').then(response => {
+      await axios.get(port +'/api/category').then(response => {
         this.commit("setCategories",response.data)
       }).catch(function (error) {console.log(error)});  
     },
     async DeleteCategory(state,id){ 
       await this.dispatch("CheckRefresh") 
       var config ={headers:{ Authorization :"Bearer "+ this.state.AllAboutToken.accessToken}}
-      await axios.delete('http://localhost:5000/api/category/'+id,config);
+      await axios.delete(port +'/api/category/'+id,config);
       this.dispatch("GetCategories") 
       this.dispatch("GetItems") 
 },
@@ -429,7 +431,7 @@ export default new Vuex.Store({
         "name":item.name,
         'id':item.id,
         "img":item.img}
-      await axios.put('http://localhost:5000/api/category/',data,config).then(response => {
+      await axios.put(port +'/api/category/',data,config).then(response => {
         console.log(response)
         this.dispatch("GetCategories") 
       }).catch(function (error) {console.log(error)});
@@ -441,7 +443,7 @@ export default new Vuex.Store({
       var data = { 
         "name":item.name,
         "img":item.img}
-      await axios.post('http://localhost:5000/api/category/',data,config).then(response => {
+      await axios.post(port +'/api/category/',data,config).then(response => {
         console.log(response)
         this.dispatch("GetCategories") 
       }).catch(function (error) {console.log(error)});
@@ -451,7 +453,7 @@ export default new Vuex.Store({
      async DeleteItem(state,id){ 
       await this.dispatch("CheckRefresh") 
       var config ={headers:{ Authorization :"Bearer "+ this.state.AllAboutToken.accessToken}}
-      await axios.delete('http://localhost:5000/api/item/'+id,config);
+      await axios.delete(port +'/api/item/'+id,config);
       this.dispatch("GetItems") 
 },
 
@@ -469,7 +471,7 @@ export default new Vuex.Store({
         "text":item.text,
         "grams":item.grams,
         "views":0}
-      await axios.put('http://localhost:5000/api/item/',data,config).then(response => {
+      await axios.put(port +'/api/item/',data,config).then(response => {
         console.log(response)
         this.dispatch("GetItems") 
       }).catch(function (error) {console.log(error)});
@@ -487,7 +489,7 @@ export default new Vuex.Store({
         'komplex': item.komplex,
         "text":item.text,
         "views":0}
-      await axios.post('http://localhost:5000/api/item/',data,config).then(response => {
+      await axios.post(port +'/api/item/',data,config).then(response => {
         console.log(response)
         this.dispatch("GetItems") 
       }).catch(function (error) {console.log(error)});
@@ -495,17 +497,17 @@ export default new Vuex.Store({
 
 
     async GetItemById(state,id){
-      await axios.get('http://localhost:5000/api/item/'+id).then(response => {
+      await axios.get(port +'/api/item/'+id).then(response => {
             this.commit("setItem",response.data)
           }).catch(function (error) {console.log(error)});
       },
 
     async GetItems(state,idCategory){
       if(idCategory==null){
-        await axios.get('http://localhost:5000/api/item').then(response => {
+        await axios.get(port+'/api/item').then(response => {
           this.commit("setItems",SortAllItems(response.data))
           console.log(response.data)
-        }).catch(function(e){this.error = e;});
+        }).catch(function(e){console.log(e)});
         }
       },
 
@@ -513,7 +515,7 @@ export default new Vuex.Store({
         const data={
         'userItems':this.state.myItems.filter(e => e.orderId ==null),
         'userId':this.state.user.sub}
-      await axios.post('http://localhost:5000/api/useritem/recom',data).then(response =>{
+      await axios.post(port+'/api/useritem/recom',data).then(response =>{
      
      
         console.log("kfhjd")
@@ -529,13 +531,13 @@ export default new Vuex.Store({
     async DeleteUser(state,id){ 
       await this.dispatch("CheckRefresh") 
       var config ={headers:{ Authorization :"Bearer "+ this.state.AllAboutToken.accessToken}}
-      await axios.delete('http://localhost:5000/api/user/'+id,config);
+      await axios.delete(port+'/api/user/'+id,config);
       this.dispatch("GetUsers") 
   },
       async GetUsers(){
         await this.dispatch("CheckRefresh")
         //var config ={headers:{ Authorization :"Bearer "+ this.state.AllAboutToken.accessToken}}
-            await axios.get('http://localhost:5000/api/user/').then(response =>{
+            await axios.get(port +'/api/user/').then(response =>{
               console.log(response.data)
             this.commit("setUsers",SortUser(response.data))
           }).catch(function (error) {console.log(error)});
@@ -544,7 +546,7 @@ export default new Vuex.Store({
 
 
     async Register(state,data){   
-      await axios.post('http://localhost:5000/api/register',data).then(response =>{
+      await axios.post(port +'/api/register',data).then(response =>{
           console.log(response)
           this.commit('setAllToken',response.data.data)
           this.commit("setUser",parseJwt(this.state.AllAboutToken.accessToken))
@@ -581,7 +583,7 @@ export default new Vuex.Store({
       const data={
             'refreshToken':this.state.AllAboutToken.refreshToken ,
             'accessToken': this.state.AllAboutToken.accessToken}
-      await axios.post('http://localhost:5000/api/refreshtoken',data).then(response =>{
+      await axios.post(port +'/api/refreshtoken',data).then(response =>{
             this.commit('setAllToken',response.data.data)})
           .catch(function (error) {
             console.log("sdfosdjhfksdhsdkj")
@@ -593,14 +595,14 @@ export default new Vuex.Store({
       },
     
       async SendEmail(){
-        await axios.post('http://localhost:5000/api/send/'+this.state.user.sub).then(response =>{
+        await axios.post(port +'/api/send/'+this.state.user.sub).then(response =>{
         console.log(response)
       })
     },
 
 
     async SendForm(state,data){   
-      await axios.post('http://localhost:5000/api/forgotpassword',data).then(response =>{
+      await axios.post(port +'/api/forgotpassword',data).then(response =>{
           console.log(response)
          
           swal({
@@ -620,7 +622,7 @@ export default new Vuex.Store({
   
 
     async Login(state,data){
-          await axios.post('http://localhost:5000/api/login',data).then(response =>{
+          await axios.post(port +'/api/login',data).then(response =>{
             console.log(response)    
             this.commit('setAllToken',response.data.data)
             console.log("sdfosdjhfksdhsdkj")
@@ -639,7 +641,7 @@ export default new Vuex.Store({
     },
 
     async Author(state,email){
-        await axios.get('http://localhost:5000/api/user/email/'+email).then(response =>{
+        await axios.get(port +'/api/user/email/'+email).then(response =>{
           this.commit('setUserName',response.data.name)
           this.commit('setUserIsEmail',response.data.emailConfirmed)
         console.log(response.data)

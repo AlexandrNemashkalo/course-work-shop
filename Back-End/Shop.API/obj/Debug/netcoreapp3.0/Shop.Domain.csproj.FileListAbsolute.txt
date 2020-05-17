@@ -6,3 +6,11 @@ C:\Users\Админ\source\repos\Shop.API\obj\Debug\netcoreapp3.0\Shop.Domain.As
 C:\Users\Админ\source\repos\Shop.API\obj\Debug\netcoreapp3.0\Shop.Domain.AssemblyInfo.cs
 C:\Users\Админ\source\repos\Shop.API\obj\Debug\netcoreapp3.0\Shop.Domain.dll
 C:\Users\Админ\source\repos\Shop.API\obj\Debug\netcoreapp3.0\Shop.Domain.pdb
+C:\Users\Админ\Desktop\course-work-shop\Back-End\Shop.API\bin\Debug\netcoreapp3.0\Shop.Domain.deps.json
+C:\Users\Админ\Desktop\course-work-shop\Back-End\Shop.API\bin\Debug\netcoreapp3.0\Shop.Domain.dll
+C:\Users\Админ\Desktop\course-work-shop\Back-End\Shop.API\bin\Debug\netcoreapp3.0\Shop.Domain.pdb
+C:\Users\Админ\Desktop\course-work-shop\Back-End\Shop.API\obj\Debug\netcoreapp3.0\Shop.Domain.csprojAssemblyReference.cache
+C:\Users\Админ\Desktop\course-work-shop\Back-End\Shop.API\obj\Debug\netcoreapp3.0\Shop.Domain.AssemblyInfoInputs.cache
+C:\Users\Админ\Desktop\course-work-shop\Back-End\Shop.API\obj\Debug\netcoreapp3.0\Shop.Domain.AssemblyInfo.cs
+C:\Users\Админ\Desktop\course-work-shop\Back-End\Shop.API\obj\Debug\netcoreapp3.0\Shop.Domain.dll
+C:\Users\Админ\Desktop\course-work-shop\Back-End\Shop.API\obj\Debug\netcoreapp3.0\Shop.Domain.pdb
