@@ -21,7 +21,7 @@ namespace NewProject
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>()
-                    .UseUrls("http://localhost:5000");
+                    .UseUrls("http://localhost:5555");
                 });
     }
 }
