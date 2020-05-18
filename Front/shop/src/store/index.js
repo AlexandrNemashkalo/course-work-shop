@@ -20,7 +20,7 @@ const vuexLocalStorage = new VuexPersist({
 })
 
 var port = 'http://84.201.133.212'
-//port ='http://localhost:5000'
+port ='http://localhost:5555'
 
 export default new Vuex.Store({
   state: {

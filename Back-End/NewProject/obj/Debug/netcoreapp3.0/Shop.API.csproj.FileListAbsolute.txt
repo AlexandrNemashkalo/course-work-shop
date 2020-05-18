@@ -165,7 +165,6 @@ C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\bin\Debug\netco
 C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\obj\Debug\netcoreapp3.0\Shop.API.csprojAssemblyReference.cache
 C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\obj\Debug\netcoreapp3.0\staticwebassets\Shop.API.StaticWebAssets.Manifest.cache
 C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\obj\Debug\netcoreapp3.0\staticwebassets\Shop.API.StaticWebAssets.xml
-C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\obj\Debug\netcoreapp3.0\Shop.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\obj\Debug\netcoreapp3.0\Shop.API.RazorAssemblyInfo.cache
 C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\obj\Debug\netcoreapp3.0\Shop.API.RazorAssemblyInfo.cs
 C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\obj\Debug\netcoreapp3.0\Shop.API.AssemblyInfoInputs.cache
@@ -186,3 +185,4 @@ C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\obj\Debug\netco
 C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\obj\Debug\netcoreapp3.0\Shop.API.csproj.CopyComplete
 C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\obj\Debug\netcoreapp3.0\Shop.API.dll
 C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\obj\Debug\netcoreapp3.0\Shop.API.pdb
+C:\Users\Админ\Desktop\course-work-shop\Back-End\NewProject\obj\Debug\netcoreapp3.0\Shop.API.MvcApplicationPartsAssemblyInfo.cache
