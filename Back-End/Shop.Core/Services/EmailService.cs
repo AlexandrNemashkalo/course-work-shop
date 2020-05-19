@@ -31,8 +31,8 @@ namespace Shop.Core.Services
                 await client.ConnectAsync("SMTP.Office365.com", 587, SecureSocketOptions.StartTls);
 
        
-                //client.Authenticate("n.a.vi_talevich@mail.ru", "Sasha2002!");
-                await client.AuthenticateAsync("avnemashkalo@edu.hse.ru", "Sasha2002");
+                
+                await client.AuthenticateAsync("avnemashkalo@edu.hse.ru", "password");
 
                 await client.SendAsync(message);
                 await client.DisconnectAsync(true);
