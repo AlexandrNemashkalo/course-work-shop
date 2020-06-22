@@ -21,7 +21,6 @@ namespace Shop.Domain.Entities
         public List<Review> Reviews { get; set; } = new List<Review>();
         public List<UserItem> UserItems { get; set; } = new List<UserItem>();
         public List<Rating> Ratings { get; set; } = new List<Rating>();
-        // public string LongText { get; set; }
 
     }
 }

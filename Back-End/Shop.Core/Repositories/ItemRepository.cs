@@ -15,13 +15,9 @@ namespace Shop.Core.Repositories
     public class ItemRepository: IItemRepository
     {
         private readonly ShopContext _context;
-        
-
-
         public ItemRepository(ShopContext context )
         {
             _context = context;
-
         }
         private async Task<ItemDto> Convert(ItemDto ut)
         {
@@ -71,8 +67,6 @@ namespace Shop.Core.Repositories
             Item.Text = item.Text;
             Item.Status = item.Status;
             Item.Komplex = item.Komplex;
-            //Item.LongText = item.LongText;
-
             _context.Items.Update(Item);
             await _context.SaveChangesAsync();
             return true;

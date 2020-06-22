@@ -19,13 +19,10 @@ namespace Shop.Domain.Dto
         public int? Stars { get; set; }
         public bool Komplex { get; set; } = false;
         public Guid CategoryId { get; set; }
-
         public List<Review> Reviews { get; set; } = new List<Review>();
         public DateTime DateCreate { get; set; } = DateTime.Now;
         public List<UserItemDto> UserItems { get; set; } = new List<UserItemDto>();
         public List<Rating> Ratings { get; set; } = new List<Rating>();
-        //public string LongText { get; set; }
-
-        //public Guid? UserId { get; set; }
+       
     }
 }

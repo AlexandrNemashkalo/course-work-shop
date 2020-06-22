@@ -17,89 +17,57 @@ namespace Shop.API.Controllers
         {
             _repo = repo;
         }
-
-
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            
             try
-            {
-                return Ok(await _repo.GetAllAsync());
-            }
+                {return Ok(await _repo.GetAllAsync());}
             catch (Exception e)
-            {
-                return StatusCode(500, e);
-            }
+                {return StatusCode(500, e);}
         }
-
-
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(Guid id)
         {
             try
-            {
-                return Ok(await _repo.GetByIdAsync(id));
-            }
+                {return Ok(await _repo.GetByIdAsync(id));}
             catch (Exception e)
-            {
-                return StatusCode(500, e);
-            }
+                {return StatusCode(500, e);}
         }
-
         [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ItemDto item)
         {
             try
-            {
-                return Ok(await _repo.CreateAsync(item));
-            }
+                {return Ok(await _repo.CreateAsync(item));}
             catch (Exception e)
-            {
-                return StatusCode(500, e);
-            }
+                {return StatusCode(500, e);}
         }
-
         [Authorize(Roles = "admin")]
         [HttpPut]
         public async Task<IActionResult> Put([FromBody] ItemDto item)
         {
             try
-            {
-                return Ok(await _repo.UpdateAsync(item));
-            }
+                {return Ok(await _repo.UpdateAsync(item));}
             catch (Exception e)
-            {
-                return StatusCode(500, e);
-            }
+                {return StatusCode(500, e);}
         }
-
         [Authorize(Roles = "admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             try
-            {
-                return Ok(await _repo.DeleteAsync(id));
-            }
+                {return Ok(await _repo.DeleteAsync(id));}
             catch (Exception e)
-            {
-                return StatusCode(500, e);
-            }
+                {return StatusCode(500, e);}
         }
 
         [HttpGet("category/{id}")]
         public async Task<IActionResult> GetByCategory(Guid id)
         {
             try
-            {
-                return Ok(await _repo.GetByCategoryAsync(id));
-            }
+                {return Ok(await _repo.GetByCategoryAsync(id));}
             catch (Exception e)
-            {
-                return StatusCode(500, e);
-            }
+                {return StatusCode(500, e);}
         }
     }
 }

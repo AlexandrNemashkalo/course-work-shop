@@ -24,11 +24,8 @@ namespace Shop.Domain.Converters
                 Grams = item.Grams,
                 Status = item.Status,
                 Komplex =item.Komplex
-
-                //LongText =item.LongText
             };
         }
-
         public static Item Convert(ItemDto item)
         {
             return new Item
@@ -44,9 +41,6 @@ namespace Shop.Domain.Converters
                 Grams = item.Grams,
                 Status = item.Status,
                 Komplex = item.Komplex
-                //LongText =item.LongText
-                //Reviews = item.Reviews
-
             };
         }
         public static List<ItemDto> Convert(List<Item> items)

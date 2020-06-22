@@ -15,14 +15,12 @@ namespace Shop.Core.EF
         public DbSet<Category> Categories { get; set; }
         public DbSet<Review> Review { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
-
         public DbSet<UserItem> UserItems { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Like> Likes { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<News> News { get; set; }
-
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -46,19 +44,8 @@ namespace Shop.Core.EF
             builder.Entity<RefreshToken>()
                 .HasKey(rt => new { rt.UserId, rt.Token });
 
-         /*   builder.Entity<Like>()
-          .HasKey(rt => new { rt.UserId, rt.ReviewId });
-
-            builder.Entity<Rating>()
-         .HasKey(rt => new { rt.UserId, rt.ItemId });*/
-
-
-
-
             base.OnModelCreating(builder);
         }
-
-
 
         public ShopContext(DbContextOptions<ShopContext> opt) : 
             base(opt)
