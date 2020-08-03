@@ -41,7 +41,7 @@
   
 </div>
 <div class="col-3 text-right pl-0">
-   <button class="btn btn-lg btn-warning  " @click="AddKomplex('2abcf5b4-a5b9-479c-6a29-08d7e074f5d1')" style="color:white;font-size:14px;"><strong> Купить</strong></button>
+   <button class="btn btn-lg btn-warning  " @click="AddKomplex('aa01a477-8d72-47a2-9b24-1af6955ffcc4')" style="color:white;font-size:14px;"><strong> Купить</strong></button>
 </div>
 
               </div>
@@ -51,7 +51,9 @@
 
                    <div v-for="item in this.$store.state.items.filter(e => e.komplex ==true)" :key="item.id" class="col-md-4 mb-3  pr-0 pr-lg-4 col-6">
                     <router-link :to="'/item/'+item.id"> <span  style="color:rgb(88,89,91);font-size:15px" class="curs">{{item.name}}</span> <br>  </router-link> 
-                   <router-link :to="'/item/'+item.id"> <img :src="require('../assets/img/'+ item.img)"  class="mymenu3 kompImg  d-block"  alt=""> </router-link> 
+                   <router-link :to="'/item/'+item.id">
+                    <img :src="'http://localhost:5555'+item.img"  class="mymenu3 kompImg  d-block"  alt=""> 
+                  </router-link> 
 
                 </div>
                    

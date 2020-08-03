@@ -54,7 +54,7 @@
 <script>
 
 
-import swal from 'sweetalert'
+// import swal from 'sweetalert'
 export default {
   data(){
     return{
@@ -68,16 +68,8 @@ export default {
      SendForm(){       
             const data={
                 "email": this.formLog.email,
-                };
-                  if(this.formLog.email.indexOf('@edu.hse.ru') >0){
+                };  
                   this.$store.dispatch('SendForm',data)
-                  }
-                  else{
-                     swal({
-                    text: "Требуетя корпоративная почта @edu.hse.ru ",
-                    icon: "warning",});
-                  }
-
         },
   }
 }

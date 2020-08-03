@@ -23,7 +23,9 @@
            
               <div class="col-lg-2  col-4 pl-0 ">
 
-                 <router-link :to="'/item/'+myItem.itemId" ><img :src="require('../assets/img/'+ myItem.itemImg)" class="mymenu3" style="width:100px" alt=""></router-link>
+                 <router-link :to="'/item/'+myItem.itemId" >
+                 <img :src="'http://localhost:5555'+myItem.itemImg" class="mymenu3" style="width:100px" alt="">
+                 </router-link>
 
                 </div>
                 <div class="col-lg-6 col-8 text-left">
@@ -114,7 +116,7 @@
            
               <div class="col-lg-2  col-4 pl-0 ">
 
-              <img :src="require('../assets/img/'+ myItem.itemImg)" style="width:100px" class="mymenu3" alt="">
+              <img :src="'http://localhost:5555'+myItem.itemImg" style="width:100px" class="mymenu3" alt="">
 
                 </div>
                 <div class="col-lg-6 col-8 text-left">

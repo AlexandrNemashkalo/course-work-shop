@@ -116,7 +116,7 @@ namespace Shop.Core.Services
                           new { userId = user.Id, code = code },
                           protocol: HttpContext.Request.Scheme);*/
 
-                    EmailService emailService = new EmailService();
+                    EmailService emailService = new EmailService(_configuration);
                     try
                     {
                         await emailService.SendEmailAsync(item.Email, "Confirm your account",

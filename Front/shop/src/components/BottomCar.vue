@@ -10,7 +10,7 @@
 
   <slide v-for="news in this.$store.state.news" :key="news.id" class="p-1  thumbs">
     <span style="position:absolute;color:white"></span>
-    <img :src="require('../assets/img/'+ news.img)"  style="width:100%;border-radius:10px" alt="">
+    <img :src="'http://localhost:5555'+ news.img"  style="width:100%;border-radius:10px" alt="">
      <div class="caption">
           <span class="title mb-4"><a class="btn btn-warning" target="_blank" :href="news.link" style="font-size:15px;color: white"> <strong>ПЕРЕЙТИ</strong> </a></span>
 

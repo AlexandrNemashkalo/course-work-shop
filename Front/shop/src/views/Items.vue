@@ -40,7 +40,13 @@
            
              <img :src="require(item.status==true?'../assets/img/есть.png':'../assets/img/нет.png') "  class="flag d-lg-none d-block" alt="">
             <div class="col-lg-2  col-4 col-md-2 pl-0 ">
-                 <router-link :to="'/item/'+item.id" ><img  style="width:100px" class="mymenu3" alt="" :id="'fly'+item.id" :src="require('../assets/img/'+item.img) "></router-link>
+                 <router-link :to="'/item/'+item.id" >
+                 <img  style="width:100px" class="mymenu3" alt="" :id="'fly'+item.id" :src="'http://localhost:5555'+item.img ">
+              
+                
+                
+      
+                 </router-link>
                 </div>
                 <div class="col-lg-6 col-8 text-left  " >
                   <router-link :to="'/item/'+item.id" > <span class="d-block ml-0 curs"  style="color:rgb(88,89,91);font-size:20px">{{item.name}}</span></router-link>

@@ -92,15 +92,9 @@ export default {
                 "email": this.formLog.email,
                 "password": this.formLog.password};
                 if(this.formLog.password.length >=8 && check_for_number(this.formLog.password) ){
-                  if(this.formLog.email.indexOf('@edu.hse.ru') >0){
+                  
                   this.$store.dispatch('Register',data)
-                  }
-                  else{
-                     swal({
-                    text: "Требуетя корпоративная почта @edu.hse.ru ",
-                    icon: "warning",
-      });
-                  }
+                 
                  
                 }
                 else{

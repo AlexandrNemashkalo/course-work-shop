@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Shop.API.Models;
 using Shop.API.ViewModels;
 using Shop.Core.Interfaces;
@@ -23,14 +24,16 @@ namespace Shop.API.Controllers
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IJwtGenerator _jwt;
+        private readonly IConfiguration _configuration;
 
 
-        public AuthController(IAuthService auth, UserManager<User> userManager, IJwtGenerator jwt, SignInManager<User> signInManager)
+        public AuthController(IAuthService auth, UserManager<User> userManager, IJwtGenerator jwt, SignInManager<User> signInManager, IConfiguration configuration)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _auth = auth;
             _jwt = jwt;
+            _configuration = configuration;
         }
 
         [HttpPost]
@@ -87,7 +90,7 @@ namespace Shop.API.Controllers
                                   new { userId = user.Id, code = code },
                                   protocol: HttpContext.Request.Scheme);
 
-                            EmailService emailService = new EmailService();
+                            EmailService emailService = new EmailService(_configuration);
                             await emailService.SendEmailAsync(item.Email, "Confirm your account",
                             $"Подтвердите регистрацию, перейдя по ссылке: <a href='{callbackUrl}'>сюда</a>");
                         }
@@ -124,7 +127,7 @@ namespace Shop.API.Controllers
               new { userId = user.Id, code = code },
               protocol: HttpContext.Request.Scheme);
 
-              EmailService emailService = new EmailService();
+              EmailService emailService = new EmailService(_configuration);
               await emailService.SendEmailAsync(user.Email, "Confirm your account",
                             $"Подтвердите регистрацию, перейдя по ссылке: <a href='{callbackUrl}'>сюда</a>");
                 return true;
@@ -199,7 +202,7 @@ namespace Shop.API.Controllers
 
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var callbackUrl = Url.Action("ResetPassword", "Auth", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
-                EmailService emailService = new EmailService();
+                EmailService emailService = new EmailService(_configuration);
                 await emailService.SendEmailAsync(model.Email, "Reset Password",
                     $"Для сброса пароля пройдите по ссылке: <a href='{callbackUrl}'>link</a>");
                 return StatusCode(200, true);

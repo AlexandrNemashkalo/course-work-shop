@@ -6,7 +6,8 @@
 
     <button v-for="category in this.$store.state.categories" :key="category.id" @click="$emit('start')"   type="button" class="btn  text-left  p-1" >
       <router-link   :to="'/items/'+category.id"><div class="mybtnmenu">
-      <img   class="mr-1  imgMenu" :src="require('../assets/img/'+category.img)"/>
+      <!-- <img   class="mr-1  imgMenu" :src="require('../assets/img/'+category.img)"/> -->
+      <img   class="mr-1  imgMenu" :src="'http://localhost:5555'+category.img"/>
       <span class="d-inline-block text-left curs ">{{category.name}}</span></div> </router-link>
     </button>
     

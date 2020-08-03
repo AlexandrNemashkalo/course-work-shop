@@ -1,5 +1,6 @@
 ﻿using MailKit.Net.Smtp;
 using MailKit.Security;
+using Microsoft.Extensions.Configuration;
 using MimeKit;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ namespace Shop.Core.Services
 {
     public class EmailService
     {
+        private readonly IConfiguration configuration;
+
+       
+        public EmailService(IConfiguration _configuration)
+        {
+            configuration = _configuration;
+        }
         public async Task SendEmailAsync(string email, string subject, string message1)
         {
 
@@ -30,10 +38,9 @@ namespace Shop.Core.Services
                 client.CheckCertificateRevocation = false;
                 await client.ConnectAsync("SMTP.Office365.com", 587, SecureSocketOptions.StartTls);
 
-       
-                
-                await client.AuthenticateAsync("avnemashkalo@edu.hse.ru", "password");
 
+
+                await client.AuthenticateAsync(configuration.GetConnectionString("EmailCompany"), configuration.GetConnectionString("EmailPassword"));
                 await client.SendAsync(message);
                 await client.DisconnectAsync(true);
 

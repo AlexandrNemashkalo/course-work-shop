@@ -16,7 +16,7 @@
            
             <div class="col-lg-4 col-12 pr-lg-0">
                <img :src="require(this.$store.state.item.status==true?'../assets/img/есть.png':'../assets/img/нет.png') "  class="flagItem d-block d-lg-none" alt="">
-                <img :src="require('../assets/img/'+this.$store.state.item.img)" class="mymenu3" :id="'fly'+this.$store.state.item.id "  style="width:100%" alt="123">
+               <img :src="'http://localhost:5555'+this.$store.state.item.img" class="mymenu3" :id="'fly'+this.$store.state.item.id "  style="width:100%" alt="123">
 
     <div class="container ml-0">
 	<div class="row">
@@ -85,7 +85,7 @@
           <span  @click="Perez(recom.id)" class="curs btnDelete " style="color:rgb(88,89,91);font-size:20px"><strong class="curs">{{recom.name}}</strong></span>
           <div class=" row w-100 h-100 product-item">
               <div class="col-8">
-            <img @click="Perez(recom.id)" :src="require('../assets/img/'+ recom.img)" :id="'fly'+recom.id "  style="width:100%;border-radius:10px" alt="">
+            <img @click="Perez(recom.id)" :src="'http://localhost:5555'+ recom.img" :id="'fly'+recom.id "  style="width:100%;border-radius:10px" alt="">
               </div>
               <div class="col-4 pr-1 pl-0  ">
                      <span class="d-block mb-5 ml-0"  style="color:rgb(88,89,91);font-size:25px"><strong >{{recom.cost}} руб</strong></span>

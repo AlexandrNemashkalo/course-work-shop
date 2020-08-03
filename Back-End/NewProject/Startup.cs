@@ -11,6 +11,9 @@ using Microsoft.Extensions.Hosting;
 using Shop.API.Configurations;
 using Microsoft.Extensions.Logging;
 using Shop.Core.Hubs;
+using Microsoft.AspNetCore.Identity;
+using Shop.Domain.Entities;
+using Shop.Core.EF;
 
 namespace NewProject
 {
@@ -53,7 +56,7 @@ namespace NewProject
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<User> userManager, RoleManager<IdentityRole<Guid>> roleManager)
         {
             if (env.IsDevelopment())
             {
@@ -102,6 +105,10 @@ namespace NewProject
                 endpoints.MapControllers();
                 endpoints.MapHub<AuthChatHub>("/authchat");
             });
+
+            Task t;
+            t = DbInitializer.InitializeAsync(userManager, roleManager, Configuration);
+            t.Wait();
         }
     }
 }

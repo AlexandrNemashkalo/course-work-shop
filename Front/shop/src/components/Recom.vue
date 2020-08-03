@@ -10,7 +10,7 @@
           <router-link  :to="'/item/'+recom.id"><span @click="$emit('start')" class="curs " style="color:rgb(88,89,91);font-size:20px"><strong>{{recom.name}}</strong></span></router-link>
           <div class=" row w-100 h-100">
               <div class="col-8">
-            <img :src="require('../assets/img/'+ recom.img)" style="width:100%;border-radius:10px" alt="">
+            <img :src="'http://localhost:5555'+ recom.img" style="width:100%;border-radius:10px" alt="">
               </div>
               <div class="col-4 pr-1 pl-0  ">
                      <span class="d-block mb-5 ml-0"  style="color:rgb(88,89,91);font-size:25px"><strong>{{recom.cost}} руб</strong></span>
