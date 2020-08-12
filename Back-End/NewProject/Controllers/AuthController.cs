@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Shop.API.Interfaces;
 using Shop.API.Models;
 using Shop.API.ViewModels;
 using Shop.Core.Interfaces;
@@ -18,7 +19,7 @@ using System.Threading.Tasks;
 namespace Shop.API.Controllers
 {
     [Route("api/[action]")]
-    public class AuthController : Controller
+    public class AuthController : Controller, IAuth
     {
         private readonly IAuthService _auth;
         private readonly UserManager<User> _userManager;
@@ -247,34 +248,5 @@ namespace Shop.API.Controllers
 
 
 
-        /*[HttpPost]
-        [AllowAnonymous]
-        [Produces(typeof(Response<Token>))]
-        public async Task<ActionResult<object>> Login([FromBody] LoginViewModel form)
-        {
-            try
-            {
-                return await _auth.Login(form.Email, form.Password);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(520, ex);
-            }
-        }
-
-        [HttpPost]
-        [AllowAnonymous]
-        [Produces(typeof(object))]
-        public async Task<ActionResult<object>> Register([FromBody] UserDto item)
-        {
-            try
-            {
-                return await _auth.Register(item);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(520, ex);
-            }
-        }*/
     }
 }

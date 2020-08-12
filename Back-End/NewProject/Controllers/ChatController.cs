@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
+using Shop.API.Interfaces;
 using Shop.Core.EF;
 using Shop.Core.Hubs;
 using Shop.Core.Repositories;
@@ -18,7 +19,7 @@ using System.Threading.Tasks;
 namespace Shop.API.Controllers
 {
     [Route("api/[controller]")]
-    public class ChatController : Controller 
+    public class ChatController : Controller , IChat
     {
         private readonly IHubContext<AuthChatHub> _authHubContext;
         private readonly ShopContext _context;
@@ -105,8 +106,7 @@ namespace Shop.API.Controllers
         
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult<bool>> SendAuth(
-            [FromBody] ReviewDto review)
+        public async Task<ActionResult<bool>> SendAuth([FromBody] ReviewDto review)
         {
             review.UserName = _userRepository.GetById(review.UserId).Result.Name;
             try

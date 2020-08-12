@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Shop.API.Interfaces;
 using Shop.Domain.Entities;
 using Shop.Domain.Repositories;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 namespace Shop.API.Controllers
 {
     [Route("api/[controller]")]
-    public class UserItemController : Controller
+    public class UserItemController : Controller, IUserItem
     {
         private readonly IUserItemRepository _repo;
         public UserItemController(IUserItemRepository repo)

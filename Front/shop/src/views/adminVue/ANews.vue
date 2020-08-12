@@ -35,8 +35,7 @@
           </div>
           </div>
         </div>
-
-        <div class="col-12">
+      <div class="col-12">
 
 
 
@@ -127,7 +126,8 @@
               v-model="file"
               :placeholder="n.img"
             ></b-form-file>
-            <span v-if="Edit(n.id)" class="text-right"> {{n.img}}</span>
+            <img v-if="Edit(n.id)" :src="'http://localhost:5555'+n.img" class="mymenu3"  style="width:100px" alt="123">
+      
            </div>
            <div class="col-md-4 pl-0">
               <span class="d-md-none  d-inline-block"> <strong>Ссылка:</strong> </span>
@@ -148,6 +148,13 @@
 <script>
 
 import swal from 'sweetalert'
+
+const toBase64 = file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+});
 
 export default {
   name: "Main",
@@ -204,17 +211,17 @@ export default {
     Edit(id){
         return this.editId == id? false :true
       },
-      SaveEdit(item){
+      async SaveEdit(item){
         console.log(item)
         console.log(this.file)
-        item.img = this.file==null? item.img: this.file.name
+        this.file==null?item.img =null:item.img =  await toBase64(this.file);
         this.$store.dispatch("EditNews",item)
         this.editId = ""
         this.file = null
       },
-      AddCategory(){
+      async AddCategory(){
         
-       this.addItem.img = this.addItem.file.name
+        this.addItem.img =  await toBase64(this.addItem.file);
         this.$store.dispatch("AddNews",this.addItem)
         console.log(this.addItem)
         this.showAdd =false

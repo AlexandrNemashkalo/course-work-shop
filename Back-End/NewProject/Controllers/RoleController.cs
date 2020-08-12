@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Shop.API.Interfaces;
 using Shop.Domain.Repositories;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 namespace Shop.API.Controllers
 {
     [Route("api/[controller]")]
-    public class RoleController : Controller
+    public class RoleController : Controller, IRole
     {
         private readonly IRoleRepository _repo;
         public RoleController(IRoleRepository repo)

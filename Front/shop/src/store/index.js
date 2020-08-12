@@ -485,6 +485,7 @@ export default new Vuex.Store({
         "name":item.name,
         'status' : item.status,
         'categoryId': item.categoryId,
+        'grams':item.grams,
         "img":item.img,
         "cost": item.cost,
         'komplex': item.komplex,

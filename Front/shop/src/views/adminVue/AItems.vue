@@ -43,6 +43,10 @@
 
             <div class="mymenu3 p-3 mb-2 d-md-block d-none">
               <div class="row ">
+
+                  <div class="col-md-1 col-6 pl-5">
+                   <span> <strong>Img</strong> </span>
+                  </div>
                   <div class="col-md-2 col-5 text-left">
                     <span> <strong>Название  </strong> </span>
                   </div>
@@ -50,16 +54,14 @@
                   <div class="col-md-2 col-6 pl-0 ">
                     <span> <strong>Категория </strong> </span>
                   </div>
-                   <div class="col-md-2 col-6 pl-0">
-                    <span> <strong>Изображение</strong> </span>
-                  </div>
+                   
                     <div class="col-md-2 col-6  pl-0">
                     <span> <strong>Описание</strong> </span>
                   </div>
                     <div class="col-md-1 col-6 pl-0">
                     <span> <strong>Рейтинг</strong> </span>
                   </div>
-                   <div class="col-md-1 col-6 pl-0  ">
+                   <div class="col-md-2 col-6 pl-0  ">
                     <span> <strong>Цена </strong>/ <strong> Граммы</strong></span>
                   </div>
                   <div class="col-md-1 col-6 pl-0 ">
@@ -79,6 +81,14 @@
            <button type="button" @click="showAdd=false" style="position:absolute;bottom:10px;right:5px;z-index:6" class="btn btn-warning">&#10006;</button>
            
     <form action="" class="w-100 pl-4 row"  @submit.prevent="AddItem">
+       <div  class="col-md-1 pl-0">
+              <span class="d-md-none d-inline-block"> <strong>Изображение:</strong> </span>
+                  <b-form-file  style="overflow:hidden;font-size:15px;width:80px"
+              v-model="addItem.file" 
+              required
+            ></b-form-file>  
+           </div>
+
            <div class="col-md-2 col-12 pl-0" >
              <div >
              <span class="d-md-none d-inline-block text-left"> <strong>Название:</strong> </span>
@@ -91,14 +101,7 @@
                 <b-form-select style="font-size:15px"  v-model="addItem.categoryId" :options="options" required></b-form-select>
            </div>
 
-           <div  class="col-md-2 pl-0">
-              <span class="d-md-none d-inline-block"> <strong>Изображение:</strong> </span>
-                  <b-form-file  style="overflow:hidden;font-size:15px"
-              v-model="addItem.file"
-              
-              required
-            ></b-form-file>  
-           </div>
+          
 
             <div class="col-md-2 pl-0">
                <span class="d-md-none d-inline-block"> <strong>Состав:</strong> </span>
@@ -145,13 +148,6 @@
 
 
 
-
-
-
-
-
-
-
  <div v-for="item in  this.$store.state.items" :key="item.id" style="position:relative;overflow: visible;">
 
         <div v-if="search==''?true: item.name.toLowerCase().indexOf(search.toLowerCase())>=0"  class="mymenu2  row m-0 w-100 mt-lg-4 mb-3 p-3 product-item "  >
@@ -172,6 +168,15 @@
           <button class="p-0 btn btn-light" @click="SaveEdit(item)" style="font-size:15px;z-index:100">	&#128190;</button>
       </div>
 
+            <div  class="col-md-1 pl-0">
+              <span class="d-md-none d-inline-block"> <strong>Изображение:</strong> </span>
+                  <b-form-file v-if="!Edit(item.id)" style="overflow:hidden"
+              v-model="file"
+              :placeholder="item.img"
+            ></b-form-file>
+             <img v-if="Edit(item.id)" :src="'http://localhost:5555'+item.img" class="mymenu3"  style="width:50px" alt="123">
+               
+           </div>
 
 
            <div class="col-md-2 pl-0 ">
@@ -187,14 +192,7 @@
                 <span v-if="Edit(item.id)" class="text-right">{{GetNameCategory(item.categoryId)}}</span>  
            </div>
 
-           <div  class="col-md-2 pl-0">
-              <span class="d-md-none d-inline-block"> <strong>Изображение:</strong> </span>
-                  <b-form-file v-if="!Edit(item.id)" style="overflow:hidden"
-              v-model="file"
-              :placeholder="item.img"
-            ></b-form-file>
-                <span v-if="Edit(item.id)" class="text-right">{{item.img}}</span>
-           </div>
+           
 
             <div class="col-md-2 pl-0">
                <span class="d-md-none d-inline-block"> <strong>Состав:</strong> </span>
@@ -210,7 +208,7 @@
                 <span  class="text-right">  {{Math.round(item.stars/item.kStars)}}</span>
               
            </div>
-           <div class="col-md-1 pl-0">
+           <div class="col-md-2 pl-0">
               <span class="d-md-none d-inline-block"> <strong>Стоимость/Граммы:</strong> </span>
                <b-form-input v-if="!Edit(item.id)" v-model="item.cost" type="number" style="font-size:15px" required ></b-form-input>
                 <span v-if="Edit(item.id)" class="text-right mr-2">    {{item.cost}} руб</span > 
@@ -248,6 +246,15 @@
   </div>  
 </template>
 <script>
+
+const toBase64 = file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+});
+
+
 
 import swal from 'sweetalert'
 
@@ -318,18 +325,20 @@ export default {
         
         return this.editId == id? false :true
       },
-      SaveEdit(item){
+      async SaveEdit(item){
         console.log(item)
         console.log(this.file)
-        item.img = this.file==null? item.img: this.file.name
-        this.$store.dispatch("EditItem",item)
+        
+        this.file==null?item.img =null:item.img =  await toBase64(this.file);
+       
+        await this.$store.dispatch("EditItem",item)
         this.editId = ""
         this.file = null
       },
       async AddItem(){
-        console.log(this.addItem)
-        this.addItem.img = this.addItem.file.name
+        this.addItem.img =  await toBase64(this.addItem.file);
         await this.$store.dispatch("AddItem",this.addItem)
+        console.log(this.addItem)
         this.showAdd =false
       }
     

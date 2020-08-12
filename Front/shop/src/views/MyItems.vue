@@ -38,7 +38,7 @@
                   <div class="row">
                   <div class="qty col-lg-12 pt-1 col-6 p-0 pl-xl-3  pr-lg-3 ">
                         <span class="minus bg-dark" @click="EditValue(myItem,'-')" >-</span>
-                        <input type="number" class="count" @change="EditValue(myItem,'+',1)" name="qty" v-model="myItem.value">
+                        <input type="number" class="count" @change="EditValue(myItem,'+',1)" name="qty" v-model="myItem.value" disabled>
                         <span class="plus bg-dark" @click="EditValue(myItem,'+')">+</span>
                     </div>
                     <div class="w-50 text-center text-bottom col-lg-12 col-6 ">

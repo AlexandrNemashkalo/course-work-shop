@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Shop.API.Interfaces;
 using Shop.Domain.Entities;
 using Shop.Domain.Repositories;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 namespace Shop.API.Controllers
 {
     [Route("api/[controller]")]
-    public class NewsController : Controller
+    public class NewsController : Controller, INews
     {
         private readonly INewsRepository _repo;
 
