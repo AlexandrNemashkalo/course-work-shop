@@ -4,7 +4,7 @@
 ## Screenshots
 1. Main page
 
-![main page](https://github.com/AlexandrNemashkalo/course-work-shop/blob/master/images/1.png)
+![main page](https://github.com/AlexandrNemashkalo/course-work-shop/blob/master/Images/1.png)
 
 2.List items
 
