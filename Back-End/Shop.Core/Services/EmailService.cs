@@ -30,7 +30,7 @@ namespace Shop.Core.Services
                 Text = message1
             };
 
-           // faabapolov @edu.hse.ru
+           
             using (var client = new SmtpClient())
             {
                 //await client.ConnectAsync("smtp.mail.ru", 456, SecureSocketOptions.Auto);

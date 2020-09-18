@@ -1,37 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\NewProject\\Shop.API.csproj": {}
+    "/home/alexandr/Work/course-work-shop/Back-End/NewProject/Shop.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\NewProject\\Shop.API.csproj": {
+    "/home/alexandr/Work/course-work-shop/Back-End/NewProject/Shop.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\NewProject\\Shop.API.csproj",
+        "projectUniqueName": "/home/alexandr/Work/course-work-shop/Back-End/NewProject/Shop.API.csproj",
         "projectName": "Shop.API",
-        "projectPath": "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\NewProject\\Shop.API.csproj",
-        "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\NewProject\\obj\\",
+        "projectPath": "/home/alexandr/Work/course-work-shop/Back-End/NewProject/Shop.API.csproj",
+        "packagesPath": "/home/alexandr/.nuget/packages/",
+        "outputPath": "/home/alexandr/Work/course-work-shop/Back-End/NewProject/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/alexandr/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.API\\Shop.Domain.csproj": {
-                "projectPath": "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.API\\Shop.Domain.csproj"
+              "/home/alexandr/Work/course-work-shop/Back-End/Shop.API/Shop.Domain.csproj": {
+                "projectPath": "/home/alexandr/Work/course-work-shop/Back-End/Shop.API/Shop.Domain.csproj"
               },
-              "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.Core\\Shop.Core.csproj": {
-                "projectPath": "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.Core\\Shop.Core.csproj"
+              "/home/alexandr/Work/course-work-shop/Back-End/Shop.Core/Shop.Core.csproj": {
+                "projectPath": "/home/alexandr/Work/course-work-shop/Back-End/Shop.Core/Shop.Core.csproj"
               }
             }
           }
@@ -84,15 +82,11 @@
               "version": "[3.0.1, 3.0.1]"
             },
             {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
               "version": "[3.0.3, 3.0.3]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
               "version": "[3.0.0, 3.0.0]"
             }
           ],
@@ -104,28 +98,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.API\\Shop.Domain.csproj": {
+    "/home/alexandr/Work/course-work-shop/Back-End/Shop.API/Shop.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.API\\Shop.Domain.csproj",
+        "projectUniqueName": "/home/alexandr/Work/course-work-shop/Back-End/Shop.API/Shop.Domain.csproj",
         "projectName": "Shop.Domain",
-        "projectPath": "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.API\\Shop.Domain.csproj",
-        "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.API\\obj\\",
+        "projectPath": "/home/alexandr/Work/course-work-shop/Back-End/Shop.API/Shop.Domain.csproj",
+        "packagesPath": "/home/alexandr/.nuget/packages/",
+        "outputPath": "/home/alexandr/Work/course-work-shop/Back-End/Shop.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/alexandr/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -169,10 +161,6 @@
             {
               "name": "Microsoft.NETCore.App.Ref",
               "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -180,35 +168,33 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.Core\\Shop.Core.csproj": {
+    "/home/alexandr/Work/course-work-shop/Back-End/Shop.Core/Shop.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.Core\\Shop.Core.csproj",
+        "projectUniqueName": "/home/alexandr/Work/course-work-shop/Back-End/Shop.Core/Shop.Core.csproj",
         "projectName": "Shop.Core",
-        "projectPath": "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.Core\\Shop.Core.csproj",
-        "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.Core\\obj\\",
+        "projectPath": "/home/alexandr/Work/course-work-shop/Back-End/Shop.Core/Shop.Core.csproj",
+        "packagesPath": "/home/alexandr/.nuget/packages/",
+        "outputPath": "/home/alexandr/Work/course-work-shop/Back-End/Shop.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/alexandr/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.API\\Shop.Domain.csproj": {
-                "projectPath": "C:\\Users\\Alexander\\Desktop\\course-work-shop\\Back-End\\Shop.API\\Shop.Domain.csproj"
+              "/home/alexandr/Work/course-work-shop/Back-End/Shop.API/Shop.Domain.csproj": {
+                "projectPath": "/home/alexandr/Work/course-work-shop/Back-End/Shop.API/Shop.Domain.csproj"
               }
             }
           }
@@ -279,10 +265,6 @@
             {
               "name": "Microsoft.NETCore.App.Ref",
               "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -290,7 +272,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
         }
       }
     }

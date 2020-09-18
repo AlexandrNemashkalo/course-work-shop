@@ -1,7 +1,7 @@
 <template>
  <carousel-3d>
 <slide :index="0" :height="20">
-    <img src="..\assets\img\1200px-Логотип_МИЭМ.svg.png"  alt="">
+    <img src="../assets/img/1200px-Логотип_МИЭМ.svg.png"  alt="">
 </slide>
 <slide :index="1">
     Slide2

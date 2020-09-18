@@ -208,7 +208,8 @@ namespace Shop.API.Controllers
                     $"Для сброса пароля пройдите по ссылке: <a href='{callbackUrl}'>link</a>");
                 return StatusCode(200, true);
             }
-            return View(model);
+            //return View(model);
+            return Ok();
         }
 
 

@@ -48,7 +48,7 @@
                 
               </div >
                  <span class="d-block ml-0 mt-5 curs"  style="color:rgb(88,89,91);font-size:25px">
-                   <img src="..\assets\img\Карта.png" class="pb-2 " style="width:25px" alt="">
+                   <img src="../assets/img/Карта.png" class="pb-2 " style="width:25px" alt="">
                    <strong class="curs"> Опплата</strong> <br> Карта ,наличные</span>
               </div>
             
@@ -59,7 +59,7 @@
               <div class=" pl-lg-5">
                  <span class="d-block ml-0 mt-3"  style="color:rgb(88,89,91);font-size:25px">
                    
-                   <img src="..\assets\img\Состав.png" style="width:25px" class="pb-2" alt="">
+                   <img src="../assets/img/Состав.png" style="width:25px" class="pb-2" alt="">
                    
                    <strong class="curs"> Состав</strong></span>
                    

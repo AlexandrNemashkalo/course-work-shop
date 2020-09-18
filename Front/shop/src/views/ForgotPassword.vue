@@ -4,7 +4,7 @@
             <div class=" register pl-4 pr-4">
                 <div class="row ">
                     <div class="col-12 text-center ">
-                 <router-link to="/"><img src="..\assets\img\1200px-Логотип_МИЭМ.svg.png" id="miem" style="width:200px" class="  "/></router-link>
+                 <router-link to="/"><img src="../assets/img/1200px-Логотип_МИЭМ.svg.png" id="miem" style="width:200px" class="  "/></router-link>
                  </div>
                 </div>
                 

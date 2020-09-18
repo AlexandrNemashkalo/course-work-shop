@@ -10,7 +10,7 @@
     <span style="font-size:17px;color:white">Администрирование </span>
        </div>
          <div class="col-4 text-right ">
-           <router-link to="/"><img src="..\assets\img\выйти.png" style="width:25px"   class=" mr-1 pt-1 "/><span style="font-size:17px;" class="link">Выйти</span> </router-link>
+           <router-link to="/"><img src="../assets/img/выйти.png" style="width:25px"   class=" mr-1 pt-1 "/><span style="font-size:17px;" class="link">Выйти</span> </router-link>
        </div>
       </div>  
     </div>

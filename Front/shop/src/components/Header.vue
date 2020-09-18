@@ -4,7 +4,7 @@
     <div class="container-lg pt-1 pb-2 d-none d-lg-block pr-lg-0 pl-lg-0">
       <div class="row">
         <div class="col-4"> 
-        <img src="..\assets\img\w384h5121380476908location.png" style="width:12px" class=" pb-1"/>
+        <img src="../assets/img/w384h5121380476908location.png" style="width:12px" class=" pb-1"/>
         <span class="textHeader">
            <a href="https://goo.gl/maps/gQxRuFwvcosH6arv7" target="_blank" style="color:white;"> <strong > улица Таллинская, д.34</strong></a></span>
         </div>
@@ -25,7 +25,7 @@
     <div class="container-lg pt-1 pb-1 pl-lg-0   pr-lg-0">
       <div class="row">
         <div class="col-lg-3 pt-3">
-      <router-link to="/"><img src="..\assets\img\1200px-Логотип_МИЭМ.svg.png" id="miem" class="  "/>
+      <router-link to="/"><img src="../assets/img/1200px-Логотип_МИЭМ.svg.png" id="miem" class="  "/>
       <strong class="mt-3" style="position:absolute;top:8px;font-size:20px;   color: rgb(255,202,5);"> СТОЛОВАЯ</strong>
       </router-link>
        
@@ -60,10 +60,10 @@
         <div class="col-lg-1 col-2 pl-0 text-right trash pt-3  "> 
           <div class="row">
             <div class="col-4 pl-0">
-      <router-link v-if="GetRole()" to="/admin" class="link"><img src="..\assets\img\админ.png"  id="trash" class="mr-1  pt-1 "/></router-link>
+      <router-link v-if="GetRole()" to="/admin" class="link"><img src="../assets/img/админ.png"  id="trash" class="mr-1  pt-1 "/></router-link>
             </div>
              <div class="col-8 pr-5">
-                 <router-link to="/order" class="link"><img src="..\assets\img\корзина-для-сайта-png-5.png"  id="trash" class="mr-1 bascket  pt-1 "/></router-link>
+                 <router-link to="/order" class="link"><img src="../assets/img/корзина-для-сайта-png-5.png"  id="trash" class="mr-1 bascket  pt-1 "/></router-link>
                   <div class="trash_into  " ><strong>+{{GetCol()}}</strong></div>
             </div>
           </div>
@@ -82,7 +82,7 @@
     
       <div class="row pb-2" style=" box-shadow:0px 10px 15px   rgba(153, 152, 152, 0.4);background-color: white">
         <div class="col-5 text-right">
-           <img src="..\assets\img\1200px-Логотип_МИЭМ.svg.png" style="width:100px;" class=" pt-3 pr-0 "/>
+           <img src="../assets/img/1200px-Логотип_МИЭМ.svg.png" style="width:100px;" class=" pt-3 pr-0 "/>
         </div>
         <div class="col-7 text-left pl-0 pt-1">
           

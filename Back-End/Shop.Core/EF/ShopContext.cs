@@ -5,11 +5,14 @@ using Shop.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 
 namespace Shop.Core.EF
 {
     public class ShopContext:  IdentityDbContext<User,IdentityRole<Guid>,Guid>
     {
+        
+        
         public DbSet<Item> Items { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Review> Review { get; set; }
@@ -168,6 +171,11 @@ namespace Shop.Core.EF
                         Link  = "https://vk.com/eeeengineer"
                     }
                 });
+            
+            
+            
+           
+     
 
 
             builder.Entity<RefreshToken>()

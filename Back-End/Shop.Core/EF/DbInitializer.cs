@@ -1,17 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity;
+using System;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Shop.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shop.Core.EF
 {
     public class DbInitializer
     {
-
-
         public static async Task InitializeAsync(UserManager<User> userManager, RoleManager<IdentityRole<Guid>> roleManager, IConfiguration configuration)
         {
             string adminEmail = configuration.GetConnectionString("AdminEmail");
@@ -20,16 +16,19 @@ namespace Shop.Core.EF
             {
                 await roleManager.CreateAsync(new IdentityRole<Guid>("admin"));
             }
+
             if (await roleManager.FindByNameAsync("user") == null)
             {
                 await roleManager.CreateAsync(new IdentityRole<Guid>("user"));
             }
+
             if (await userManager.FindByNameAsync(adminEmail) == null)
             {
-                User admin = new User { 
-                    Email = adminEmail, 
-                    UserName = adminEmail, 
-                    Name = "SuperAdmin" 
+                User admin = new User
+                {
+                    Email = adminEmail,
+                    UserName = adminEmail,
+                    Name = "SuperAdmin"
                 };
                 IdentityResult result = await userManager.CreateAsync(admin, password);
                 if (result.Succeeded)

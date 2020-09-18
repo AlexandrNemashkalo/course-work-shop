@@ -1,10 +1,10 @@
 <template>
   <hooper :autoPlay="false" id="hooper"  :infiniteScroll="true" :wheelControl="false" :centerMode="true" >
     <slide style="">
-      <img src="..\assets\img\Таллинсклнраздачи.jpg" class="h-100 "  alt="">
+      <img src="../assets/img/Таллинсклнраздачи.jpg" class="h-100 "  alt="">
     </slide>
     <slide>
-       <img src="..\assets\img\Таллинскфотозала.jpg" class="h-100 "  alt="">
+       <img src="../assets/img/Таллинскфотозала.jpg" class="h-100 "  alt="">
     </slide>
      <slide >
       <div class=" " >
