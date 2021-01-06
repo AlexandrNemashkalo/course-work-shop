@@ -12,7 +12,7 @@
     "@mdi/font": "^5.0.45",
     "@mdi/js": "^5.0.45",
     "@trevoreyre/autocomplete-vue": "^2.1.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.9.0",
     "core-js": "^3.6.4",
